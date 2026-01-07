@@ -18,8 +18,6 @@ This is **agentic AI**, not prompt-driven code generation.
 
 ---
 
----
-
 ### 🔒 Migration Safety Model (IMPORTANT)
 
 This framework follows a **strict reference–copy migration model** to guarantee safety and reversibility.
