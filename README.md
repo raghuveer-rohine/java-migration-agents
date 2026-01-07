@@ -18,6 +18,48 @@ This is **agentic AI**, not prompt-driven code generation.
 
 ---
 
+---
+
+### 🔒 Migration Safety Model (IMPORTANT)
+
+This framework follows a **strict reference–copy migration model** to guarantee safety and reversibility.
+
+**Key rule:**
+
+> ⚠️ The original Java project is treated as a **read-only reference** and is **never modified**.
+
+#### How migration works
+
+1. **Base (Reference) Project**
+
+   * Original project (e.g. Java 8 / Spring Boot 2.x)
+   * Used only for:
+
+     * Analysis
+     * Classification
+     * Rewrite reference
+   * **Never changed by any agent**
+
+2. **Migration Target Project**
+
+   * A **full copy** of the base project in a separate directory
+   * All build upgrades, rewrites, and fixes are applied **only here**
+   * This is the project that becomes Java 17 / Spring Boot 3.x
+
+#### Why this matters
+
+* Guarantees **zero risk** to the original codebase
+* Allows:
+
+  * Side-by-side comparison
+  * Easy rollback
+  * Deterministic reruns
+* Enables agents to reason safely without fear of corruption
+
+All agents are **contractually bound** to respect this separation.
+
+---
+
 ## 🏗️ Agent Architecture
 
 ### 1️⃣ Planner Agent
@@ -181,6 +223,10 @@ This installs all dependencies defined in `pyproject.toml`.
 ---
 
 ## ▶️ Running the Migration
+
+⚠️ IMPORTANT:
+Always pass the **original project path** as the reference input,
+and run all migration steps on a **separately copied project directory**.
 
 Example entry point:
 
