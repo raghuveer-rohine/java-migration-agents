@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+
+# OS files
+.DS_Store
+
+# Migration state / generated outputs
+migration_state/
+*.json
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Build / temp
+build/
+dist/
